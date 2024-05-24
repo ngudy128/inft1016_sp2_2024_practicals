@@ -3,12 +3,15 @@
       margin: 0;
       font: 1em/1.33 Verdana, sans-serif;
    }
-
+    header, footer {
+        background-color: var(--c-background-highlights ;
+    }
    h1, h2 {
       color: red;
    }
    h1 {
     font-size: 1.33em;
+    color: var(--base-font-color)
    }
 
    h2 {
@@ -39,7 +42,7 @@ p.first {
 @media screen {
     body {
         color: black;
-        background-color: yellow;
+        background-color: var(--c-background-color);
     }
 }
 @media print {  
@@ -47,4 +50,20 @@ p.first {
       color: black;  
       background-color: white;  
     }
+  }
+
+  :root {
+    --base-font-color: rgb(131, 148, 150);
+    --secondary_font_color: rgb(88, 110, 117);
+    --emphasized-font: rgb(147, 161, 161);
+    --c-background-color: rgb(0, 43, 54);
+    --c-background-highlights: rgb(7, 54, 66);
+    --c-yellow: rgb(181, 137, 0);
+    --c-orange: rgb(203, 75, 22);
+    --c-red: rgb(220, 50, 47);
+    --c-magenta: rgb(211, 54, 130);
+    --c-violet: rgb(108, 113, 196);
+    --c-blue: rgb(38, 139, 210);
+    --c-cyan: rgb(42, 161, 152);
+    --c-green: rgb(133, 153, 0);
   }
