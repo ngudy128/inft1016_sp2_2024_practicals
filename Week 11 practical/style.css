@@ -1,33 +1,40 @@
-   body {
-    background-color: var(--c-background-color);
-    width: 800px;
-   }
-    header, footer {
-        background-color: var(--c-background-highlights) ;
-        color: var(--base-font-color);
-    }
-    header {
-      text-align: center;
-      font-size: 150%;
-      color: var(--c-yellow);
-    }
-   h2, h3 {
-    font-size: 1.6em;
-   }
-   h1, h2 {
-    margin: 0.83em 0 0.17em 0;
-   }
-   article h3{
-    padding-top: 50px;
-   }
-   p {
-    font: 1.1em/1.33 Verdana, sans-serif;
-   }
-   #subsection {
-    border-style: solid;
-    border-width: 3px;
-    border-color: var(--c-cyan);
-   }
+/* applied the backgound color variable and edited the width */
+body {
+background-color: var(--c-background-color);
+width: 800px;
+}
+/* applied the background highlights and base font color variable */
+header, footer {
+    background-color: var(--c-background-highlights) ;
+    color: var(--base-font-color);
+}
+/* Eddited the font of the header */
+header {
+  text-align: center;
+  font-size: 150%;
+  color: var(--c-yellow);
+}
+/* changed the font size of h2 and h3 */
+h2, h3 {
+font-size: 1.6em;
+}
+h1, h2 {
+margin: 0.83em 0 0.17em 0;
+}
+/* add the padding to the article headings */
+article h3{
+padding-top: 50px;
+}
+p {
+font: 1.1em/1.33 Verdana, sans-serif;
+}
+/*Applied the border to the subsection part */
+#subsection {
+border-style: solid;
+border-width: 3px;
+border-color: var(--c-cyan);
+}
+/*Applied the color to the links in the nav section */
 nav{
   font-size: 1.2em;
   padding-top: 10px;
@@ -50,6 +57,7 @@ nav a:hover {
       background-color: white;  
     }
   }
+  /* Display the flex type for the links in the nav section */
   nav ul {
     list-style-type: none;
     display: flex;
@@ -58,11 +66,13 @@ nav a:hover {
     margin: 10px;
     width: 90%;
   }
+  /* Display so that it looks like the output with 2 columns */
   main {
     display: grid;
     grid-template-columns: 85% 15%;
     color: var(--base-font-color);
   }
+  /* changed the font of the links in the aside section*/
   aside {
     color: var(--c-green);
     font-size: 1.2em;
@@ -76,6 +86,7 @@ nav a:hover {
   aside a:hover {
     color: var(--c-blue);
   }
+  /* root color specification */
   :root {
     --base-font-color: rgb(131, 148, 150);
     --secondary_font_color: rgb(88, 110, 117);
