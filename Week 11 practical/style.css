@@ -9,13 +9,10 @@
     header {
       text-align: center;
       font-size: 150%;
-      color: var(--c-yellow)
+      color: var(--c-yellow);
     }
-   h2 {
-    font-size: 1.17em;
-   }
-   p {
-    margin: 0 0 0.5em 0;
+   h2, h3 {
+    font-size: 1.6em;
    }
    h1, h2 {
     margin: 0.83em 0 0.17em 0;
@@ -23,33 +20,23 @@
    article h3{
     padding-top: 50px;
    }
+   p {
+    font: 1.1em/1.33 Verdana, sans-serif;
+   }
    #subsection {
     border-style: solid;
     border-width: 3px;
     border-color: var(--c-cyan);
-  
    }
-   p:first-of-type {
-  font: 1em/1.33 Verdana, sans-serif;
-}
-p {
-   padding: 0;
-   margin: 0;
-   text-indent: 5em;
-}
-p + p {
-   text-indent: 5em;
-   /* this selects p tags preceded by a p tag --
-     that is, not the first p tag */
-}
-p.first {
-   text-indent: 0em;
+nav{
+  font-size: 1.2em;
+  padding-top: 10px;
 }
 nav a:link {
-  color: var(--c-magenta)
+  color: var(--c-magenta);
 }
-a:hover {
-  color: var(--c-orange)
+nav a:hover {
+  color: var(--c-orange);
 }
 @media screen {
     body {
@@ -71,18 +58,23 @@ a:hover {
     margin: 10px;
     width: 90%;
   }
+  main {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    color: var(--base-font-color);
+  }
   aside {
     color: var(--c-green);
+    font-size: 1.2em;
   }
   aside a:link {
     color: var(--c-red);
   }
+  aside a:visited {
+    color: var(--c-red);
+  }
   aside a:hover {
     color: var(--c-blue);
-  }
-  main {
-    display: grid;
-    grid-template-columns: 85% 15%;
   }
   :root {
     --base-font-color: rgb(131, 148, 150);
