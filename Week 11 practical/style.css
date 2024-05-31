@@ -1,19 +1,16 @@
-    h1, h2, p {
-      padding: 0;
-      margin: 0;
-      font: 1em/1.33 Verdana, sans-serif;
+   body {
+    background-color: var(--c-background-color);
+    width: 800px;
    }
     header, footer {
-        background-color: var(--c-background-highlights ;
+        background-color: var(--c-background-highlights) ;
+        color: var(--base-font-color);
     }
-   h1, h2 {
-      color: red;
-   }
-   h1 {
-    font-size: 1.33em;
-    color: var(--base-font-color)
-   }
-
+    header {
+      text-align: center;
+      font-size: 150%;
+      color: var(--c-yellow)
+    }
    h2 {
     font-size: 1.17em;
    }
@@ -23,8 +20,17 @@
    h1, h2 {
     margin: 0.83em 0 0.17em 0;
    }
+   article h3{
+    padding-top: 50px;
+   }
+   #subsection {
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--c-cyan);
+  
+   }
    p:first-of-type {
-  font: 0.17em/1.33 Verdana, sans-serif;
+  font: 1em/1.33 Verdana, sans-serif;
 }
 p {
    padding: 0;
@@ -39,10 +45,16 @@ p + p {
 p.first {
    text-indent: 0em;
 }
+nav a:link {
+  color: var(--c-magenta)
+}
+a:hover {
+  color: var(--c-orange)
+}
 @media screen {
     body {
         color: black;
-        background-color: var(--c-background-color);
+        background-color: (--c-background-color);
     }
 }
 @media print {  
@@ -51,7 +63,27 @@ p.first {
       background-color: white;  
     }
   }
-
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    width: 90%;
+  }
+  aside {
+    color: var(--c-green);
+  }
+  aside a:link {
+    color: var(--c-red);
+  }
+  aside a:hover {
+    color: var(--c-blue);
+  }
+  main {
+    display: grid;
+    grid-template-columns: 85% 15%;
+  }
   :root {
     --base-font-color: rgb(131, 148, 150);
     --secondary_font_color: rgb(88, 110, 117);
