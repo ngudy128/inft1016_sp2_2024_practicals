@@ -86,6 +86,7 @@ nav a:hover {
   aside a:hover {
     color: var(--c-blue);
   }
+ 
   /* root color specification */
   :root {
     --base-font-color: rgb(131, 148, 150);
