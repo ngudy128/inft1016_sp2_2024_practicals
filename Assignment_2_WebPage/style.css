@@ -1,3 +1,38 @@
 body {
     background-color: rgb(148, 212, 255);
 }
+
+button {
+    background-color: aquamarine;
+}
+
+#button_1 {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    background-color: aquamarine;
+}
+
+#toggle_button {
+    font-size: 18px;
+}
+
+#overview {
+    font-size: 18px;
+}
+
+ul {
+    font-size: 18px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    width: 90%;
+    font-size: 20px;
+    color: darkblue;
+}
