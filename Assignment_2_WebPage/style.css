@@ -1,31 +1,50 @@
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--heading-color)
 }
-body {
-    background-color: var(--bg-color);   
+date_and_time  {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin-top: -30px;
+    gap: 10px;
+    
+    
 }
-main {
+body {
+    background-color: var(--bg-color);
+}
+
+p, main {
     color: var(--font-color);
 }
+
 button {
     background-color: var(--secondary-color);
     color: var(--font-color);
 }
+
 #button_1 {
     float: left;
     display: flex;
     flex-direction: row;
     font-size: 20px;
 }
+
 #toggle_button {
     font-size: 17px;
 }
+
 #overview {
     font-size: 18px;
 }
+
 ul {
     font-size: 18px;
 }
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -36,13 +55,15 @@ nav ul {
     font-size: 20px;
     color: var(--heading-color);
 }
+
 :root {
     --primary-color: rgb(255, 255, 255);
     --secondary-color: rgb(100, 255, 203);
     --bg-color: rgb(148, 212, 255);
     --font-color: rgb(0, 0, 0);
-    --heading-color: rgb(53, 53, 53);
+    --heading-color: rgb(25, 25, 25);
 }
+
 [data-theme="dark"] {
     --primary-color: rgb(0, 0, 0);
     --secondary-color: rgb(53, 0, 159);
