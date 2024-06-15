@@ -9,9 +9,10 @@ date_and_time  {
     flex-direction: row;
     align-items: left;
     margin-top: -30px;
+    margin-bottom: -20px;
     gap: 10px;
-    
-    
+
+       
 }
 body {
     background-color: var(--bg-color);

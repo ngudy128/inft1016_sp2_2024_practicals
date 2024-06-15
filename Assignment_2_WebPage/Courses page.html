@@ -9,7 +9,7 @@
     </title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // change image when clicking on
+        // A function to change the image when clicking on the Dices button
         function change_image_1() {
             var img = document.getElementById("image");
             var texteElement = document.getElementById("text");
@@ -29,7 +29,7 @@
             var dices_link = document.getElementById("dices_link");
             dices_link.href = "https://www.shutterstock.com/image-photo/2024-goals-business-life-wooden-cubes-2286643233";
         }
-
+        // function change_color() shows dark theme if it's in the light theme and vice versa
         function change_color() {
             if (document.documentElement.getAttribute("data-theme") == ":root") {
                 document.documentElement.setAttribute("data-theme", "dark");
@@ -37,7 +37,7 @@
                 document.documentElement.setAttribute("data-theme", ":root");
             }
         }
-
+        // function date_time() displays the current time updated every second
         function date_time() {
             let time = document.getElementById("current_time");
             let date = document.getElementById("current_date")
@@ -46,6 +46,21 @@
             date.innerHTML = update.toLocaleDateString()
         }
         setInterval(date_time, 1000)
+
+        // function getname() to get and return the name on the query string 
+        function getname() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get("user_name")
+        }
+        // onload function() to display the name to the screen from the server
+        window.onload = function () {
+            const user_name = getname();
+            if (user_name) {
+                document.getElementById("name").innerHTML = "Hello" + " " + user_name;
+            }
+
+        }
 
     </script>
 
@@ -58,6 +73,8 @@
             <p id="current_time"></p>
             <p id="current_date"></p>
         </date_and_time>
+
+        <h2 id="name"></h2>
         <button id="toggle_button" type="button" onclick="change_color()">Toggle Theme</button>
 
 
@@ -75,8 +92,10 @@
     <main>
         <article>
             <h2>Information Technology Fundamentals</h2>
-            <p> A fun course that provides basic skills for new learners like me to get to know more about technology in general.
-                However, I feel like the assingments were kind of too different compared to what we had learned before that. </p>
+            <p> A fun course that provides basic skills for new learners like me to get to know more about technology in
+                general.
+                However, I feel like the assingments were kind of too different compared to what we had learned before
+                that. </p>
 
             <h2>Network Fundamentals</h2>
             <p>Great campus with modern technologies and comfortable environment</p>

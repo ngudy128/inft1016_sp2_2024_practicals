@@ -29,7 +29,7 @@
             var dices_link = document.getElementById("dices_link");
             dices_link.href = "https://www.shutterstock.com/image-photo/2024-goals-business-life-wooden-cubes-2286643233";
         }
-
+        // function change_color() shows dark theme if it's in the light theme and vice versa
         function change_color() {
             if (document.documentElement.getAttribute("data-theme") == ":root") {
                 document.documentElement.setAttribute("data-theme", "dark");
@@ -37,6 +37,7 @@
                 document.documentElement.setAttribute("data-theme", ":root");
             }
         }
+        // function date_time() displays the current time updated every second
         function date_time() {
             let time = document.getElementById("current_time");
             let date = document.getElementById("current_date")
@@ -46,12 +47,20 @@
         }
         setInterval(date_time, 1000)
 
-        function getname () {
+        // function getname() to get and return the name on the query string 
+        function getname() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             return urlParams.get("user_name")
         }
+        // onload function() to display the name to the screen from the server
+        window.onload = function () {
+            const user_name = getname();
+            if (user_name) {
+                document.getElementById("name").innerHTML = "Hello" + " " + user_name;
+            }
 
+        }
 
     </script>
 
@@ -60,17 +69,19 @@
 <body>
     <header>
         <h1>Home </h1>
+        <!-- Display date and time-->
         <date_and_time>
             <p id="current_time"></p>
             <p id="current_date"></p>
         </date_and_time>
-        <div id="greeting">
-            <h2 id="name">Hello</h2>
-        </div>
+        <!-- Display user's name-->
+        <h2 id="name"></h2>
+
         <button id="toggle_button" type="button" onclick="change_color()">Toggle Theme</button>
 
     </header>
     <nav>
+        <!--Home page, courses page and to do tasks page with hyperlink-->
         <ul>
             <li><a href="Home page.html">Home</a></li>
             <li><a href="Courses page.html">Courses</a></li>
@@ -100,11 +111,12 @@
                 <li>Some places have no wifi</li>
             </ul>
         </article>
-
+        <!-- 2 buttons to change between 2 images with the onclick function-->
         <button id="button_1" type="button" onclick="change_image_1()">Dices</button>
         <button id="button_1" type="button" onclick="change_image_2()">Goals</button>
         <p></p><br><br>
 
+        <!-- Image and its source are displayed to the screen-->
         <img src="https://www.shutterstock.com/shutterstock/photos/1226807464/display_1500/stock-photo-dices-with-teamwork-idea-business-1226807464.jpg"
             width="30%" id="image">
         <p id="text">Dices with Teamwork Ideas Business. A great picture to show how our ideas are generated through
