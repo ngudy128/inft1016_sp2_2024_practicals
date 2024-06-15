@@ -9,7 +9,7 @@
     </title>
     <link rel="stylesheet" href="style.css">
     <script>
-
+        // A function to change the image when clicking on the Dices button
         function change_image_1() {
             var img = document.getElementById("image");
             var texteElement = document.getElementById("text");
@@ -46,6 +46,12 @@
         }
         setInterval(date_time, 1000)
 
+        function getname () {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get("user_name")
+        }
+
 
     </script>
 
@@ -58,6 +64,9 @@
             <p id="current_time"></p>
             <p id="current_date"></p>
         </date_and_time>
+        <div id="greeting">
+            <h2 id="name">Hello</h2>
+        </div>
         <button id="toggle_button" type="button" onclick="change_color()">Toggle Theme</button>
 
     </header>

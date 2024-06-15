@@ -9,8 +9,8 @@
     </title>
     <link rel="stylesheet" href="style.css">
     <script>
-        
-          function change_image_1() {
+        // change image when clicking on
+        function change_image_1() {
             var img = document.getElementById("image");
             var texteElement = document.getElementById("text");
             img.src = "https://www.shutterstock.com/shutterstock/photos/1226807464/display_1500/stock-photo-dices-with-teamwork-idea-business-1226807464.jpg";
@@ -75,7 +75,8 @@
     <main>
         <article>
             <h2>Information Technology Fundamentals</h2>
-            <p> </p>
+            <p> A fun course that provides basic skills for new learners like me to get to know more about technology in general.
+                However, I feel like the assingments were kind of too different compared to what we had learned before that. </p>
 
             <h2>Network Fundamentals</h2>
             <p>Great campus with modern technologies and comfortable environment</p>
@@ -85,11 +86,22 @@
                 me. I did not like coding at all at first but after </p>
 
         </article>
+        <button id="button_1" type="button" onclick="change_image_1()">Dices</button>
+        <button id="button_1" type="button" onclick="change_image_2()">Goals</button>
+        <p></p><br><br>
 
+        <img src="https://www.shutterstock.com/shutterstock/photos/1226807464/display_1500/stock-photo-dices-with-teamwork-idea-business-1226807464.jpg"
+            width="30%" id="image">
+        <p id="text">Dices with Teamwork Ideas Business. A great picture to show how our ideas are generated through
+            many deeep thoughts </p>
+        <p><a id="dices_link"
+                href="https://www.shutterstock.com/image-photo/dices-teamwork-idea-business-1226807464">Image source</a>
+        </p>
 
-        <footer>
-            <p>©Copyright 2024 by <Inset your name> Duc Minh Nguyen</p>
-        </footer>
+    </main>
+    <footer>
+        <p>©Copyright 2024 by <Inset your name> Duc Minh Nguyen</p>
+    </footer>
 
 </body>
 
