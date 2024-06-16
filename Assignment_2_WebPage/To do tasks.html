@@ -9,8 +9,8 @@
     </title>
     <link rel="stylesheet" href="style.css">
     <script>
-// A function to change the image when clicking on the Dices button
-function change_image_1() {
+        // A function to change the image when clicking on the Dices button
+        function change_image_1() {
             var img = document.getElementById("image");
             var texteElement = document.getElementById("text");
             img.src = "https://www.shutterstock.com/shutterstock/photos/1226807464/display_1500/stock-photo-dices-with-teamwork-idea-business-1226807464.jpg";
@@ -60,25 +60,73 @@ function change_image_1() {
             const urlParams = new URLSearchParams(queryString);
             return urlParams.get("user_name")
         }
+
         // onload function() to display the name to the screen from the server or local storage and the last theme used
         window.onload = function () {
             // retrieve the name in the url parameters
-            const user_name = getname();
+            let user_name = getname();
             // if the user type their name in the query string, the name is displayed and stored in local storage
             if (user_name) {
                 document.getElementById("name").innerHTML = "Hello " + user_name;
                 localStorage.setItem("user_name", user_name);
-            // if no user's name is typed in, the function will check the local storage and display the name if one exists
+                // if no user's name is typed in, the function will check the local storage and display the name if one exists
             } else {
                 const stored_user_name = localStorage.getItem("user_name");
                 if (stored_user_name) {
                     document.getElementById("name").innerHTML = "Hello " + stored_user_name;
                 }
             }
+
             // retrieve the theme from the local storage and display the last used theme
             const stored_theme = localStorage.getItem("theme_color");
             if (stored_theme) {
                 document.documentElement.setAttribute("data-theme", stored_theme);
+            }
+        }
+
+        // function add_item() uses the input by the user and add it to the list using the appendChild method
+        function add_item() {
+            let input_tasks = document.getElementById("add_task").value;
+            let ul = document.getElementById("task_list");
+            let li = document.createElement("li");
+            ul.appendChild(li);
+            li.appendChild(document.createTextNode(input_tasks));
+            document.getElementById("add_task").value = "";
+        }
+        // This function save the item in the list to the localStorage
+        function save_item() {
+            let saved_list = document.getElementById("task_list").innerHTML;
+            localStorage.setItem("saved_list", saved_list);
+        }
+        // This function load the old list in the localStorage using the getItem method
+        function load_item() {
+            let saved_list = localStorage.getItem("saved_list");
+            if (saved_list) {
+                document.getElementById("task_list").innerHTML = saved_list;
+            }
+        }
+        // This function remove the item corresponding to the input
+        function remove_item() {
+            let input_tasks = document.getElementById("add_task").value;
+            if (input_tasks != "") {
+                let index = 0;
+                // Create a new list to add the item that is not what the user wants to remove and append those items to the new list
+                let new_list = [];
+                let ul = document.getElementById("task_list");
+                // A loop to look for the corresponding item to the user's input and it loops until the end of the list
+                while (index < ul.children.length) {
+                    // if the item is the same as the user's input, it will be removed
+                    if (ul.children[index].textContent == input_tasks) {
+                        ul.removeChild(ul.children[index]);
+                        document.getElementById("add_task").value = "";
+                    }
+                    // if the item is not the same as the user's input, the item is added to the new list and the index is updated
+                    else {
+                        new_list.push(ul.children[index].textContent)
+                        index = index + 1;
+                    }
+                }
+                localStorage.setItem("saved_list", new_list.toString());
             }
         }
     </script>
@@ -87,7 +135,7 @@ function change_image_1() {
 
 <body>
     <header>
-        <h1>Courses </h1>
+        <h1>To do tasks </h1>
         <date_and_time>
             <p id="current_time"></p>
             <p id="current_date"></p>
@@ -109,19 +157,24 @@ function change_image_1() {
     </nav>
 
     <main>
-        <article>
-            <h2>Information Technology Fundamentals</h2>
-            <p> A fun course that provides basic skills for new learners like me to get to know more about technology in
-                general.
-                However, I feel like the assingments were kind of too different compared to what we had learned before
-                that. </p>
+        <section id = "password">
+            <input id="password_input" type="text" placeholder="Enter a password"> <button type="button" onclick="password_check">Submit</button>
+        </section>
+        <article id="todotasks">
+            <h3>Add to your to do tasks list</h3>
+            <input id="add_task" type="text" placeholder="New task">
+            <button type="button" onclick="add_item()">Add</button>
+            <button type="button" onclick="remove_item()">Remove</button>
+            <button type="button" onclick="save_item()">Save</button>
+            <button type="button" onclick="load_item()">Load</button>
 
-            <h2>Network Fundamentals</h2>
-            <p>Great campus with modern technologies and comfortable environment</p>
 
-            <h2>Problem Solving and Programming</h2>
-            <p>Very interesting course. I got to learn how to code with python and it was not to hard but very fun to
-                me. I did not like coding at all at first but after </p>
+            <section id="task_list">
+                <ul>
+                    <li>Important Tasks</li>
+                    
+                </ul>
+            </section>
 
         </article>
         <button id="button_1" type="button" onclick="change_image_1()">Dices</button>
