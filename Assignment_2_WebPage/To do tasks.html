@@ -129,6 +129,16 @@
                 localStorage.setItem("saved_list", new_list.toString());
             }
         }
+
+        function password_check() {
+            let user_password = document.getElementById("password_input")
+            let correct_password = "ITF_2024"
+            if (user_password == correct_password) {
+                alert("Correct Password!");
+            } else {
+                alert("Incorrect password! Please try again")
+            }
+        }
     </script>
 
 </head>
@@ -158,7 +168,7 @@
 
     <main>
         <section id = "password">
-            <input id="password_input" type="text" placeholder="Enter a password"> <button type="button" onclick="password_check">Submit</button>
+            <input id="password_input" type="text" placeholder="Enter a password"> <button type="button" onclick="password_check()">Submit</button>
         </section>
         <article id="todotasks">
             <h3>Add to your to do tasks list</h3>
