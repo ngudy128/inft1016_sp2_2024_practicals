@@ -31,11 +31,18 @@
         }
         // function change_color() shows dark theme if it's in the light theme and vice versa
         function change_color() {
-            if (document.documentElement.getAttribute("data-theme") == ":root") {
-                document.documentElement.setAttribute("data-theme", "dark");
-            } else {
-                document.documentElement.setAttribute("data-theme", ":root");
+            let current_theme = document.documentElement.getAttribute("data-theme")
+            let changed_theme_color;
+            if (current_theme == "dark") {
+                changed_theme_color = ":root";
             }
+            else {
+                changed_theme_color = "dark";
+            }
+            document.documentElement.setAttribute("data-theme", changed_theme_color)
+            // store the theme in the local storage
+            localStorage.setItem("theme_color", changed_theme_color)
+
         }
         // function date_time() displays the current time updated every second
         function date_time() {
@@ -53,15 +60,27 @@
             const urlParams = new URLSearchParams(queryString);
             return urlParams.get("user_name")
         }
-        // onload function() to display the name to the screen from the server
+        // onload function() to display the name to the screen from the server or local storage and the last theme used
         window.onload = function () {
+            // retrieve the name in the url parameters
             const user_name = getname();
+            // if the user type their name in the query string, the name is displayed and stored in local storage
             if (user_name) {
-                document.getElementById("name").innerHTML = "Hello" + " " + user_name;
+                document.getElementById("name").innerHTML = "Hello " + user_name;
+                localStorage.setItem("user_name", user_name);
+            // if no user's name is typed in, the function will check the local storage and display the name if one exists
+            } else {
+                const stored_user_name = localStorage.getItem("user_name");
+                if (stored_user_name) {
+                    document.getElementById("name").innerHTML = "Hello " + stored_user_name;
+                }
             }
-
+            // retrieve the theme from the local storage and display the last used theme
+            const stored_theme = localStorage.getItem("theme_color");
+            if (stored_theme) {
+                document.documentElement.setAttribute("data-theme", stored_theme);
+            }
         }
-
     </script>
 
 </head>

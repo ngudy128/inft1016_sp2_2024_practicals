@@ -4,6 +4,7 @@ h3,
 h4 {
     color: var(--heading-color)
 }
+/* using flex box to display the date and time */
 date_and_time  {
     display: flex;
     flex-direction: row;
@@ -45,7 +46,7 @@ button {
 ul {
     font-size: 18px;
 }
-
+/* format the pages hyperlinks in a flex box and display the heading color */
 nav ul {
     list-style-type: none;
     display: flex;
